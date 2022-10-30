@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Password Validation</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+       
+    </head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+    <div class="container">
+      <h3>Check Password</h3>
+        <form  onsubmit="return myfunction();">
+        <label for="password">Enter your Password</label>
+        <input type="password" name="password"  value="" id="password">
+        <!-- message -->
+        <span id="Message" ></span><br><br>
+
+        <!-- Re-Enter password -->
+          <label for="password">Re Enter your Password</label>
+         <input type="password" name="password" value="" id="password01"><br>
+       
+
+        <input type="submit" value="Check" id="button">
+      </form>
+    </div>
+    <script>
+
+      function myfunction(){
+          var A = document.getElementById("password").value;
+                  var B = document.getElementById("password01").value;
+      
+          var message=document.getElementById("Message")
+          var button=document.getElementById("button")
+       if(A==""){
+        Message.innerHTML="**please enter password";
+        return false
+
+       }
+       if(A!=B){
+        Message.innerHTML="**Incorrect Password";
+        Message.style.color='red';
+        return false
+       }
+      if(A.length<5){
+        Message.innerHTML="**password length must be greater than 5 ";
+        Message.style.color='blue';
+        return false
+
+      }
+      if(A==B){
+        Message.innerHTML="** Correct Password";
+        Message.style.color='green';
+        return false
+      }
+      
+        }
+      
+      </script>
+</body>
+</html>
